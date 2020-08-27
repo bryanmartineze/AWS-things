@@ -1,0 +1,30 @@
+{
+    "Id": "Policy1598487265688",
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1598487087913",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::a-test-sysops-bucket-00032/*",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::784304136963:user/adrian"
+                ]
+            }
+        },
+        {
+            "Sid": "Stmt1598487189262",
+            "Action": [
+                "s3:GetObject",
+                "s3:GetObjectAcl",
+                "s3:GetObjectTagging"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::a-test-sysops-bucket-00032/*",
+            "Principal": "*"
+        }
+    ]
+}
