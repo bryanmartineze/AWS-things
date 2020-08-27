@@ -67,3 +67,24 @@
         }
     ]
 }
+
+##POLICY THAT DENIES CHANGES IN BUCKET UNTIL GIVES A MFA AUTH
+
+{
+    "Id": "Policy1598488977493",
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1598488971657",
+            "Action": "s3:*",
+            "Effect": "Deny",
+            "Resource": "arn:aws:s3:::a-test-sysops-bucket-00033",
+            "Condition": {
+                "Null": {
+                    "aws:MultiFactorAuthAge": "true"
+                }
+            },
+            "Principal": "*"
+        }
+    ]
+}
